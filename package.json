@@ -1,0 +1,33 @@
+{
+  "name": "bubble-chart-categorical",
+  "description": "Bubble Chart with Categorical Data - Power BI Custom Visual",
+  "version": "2.0.0.4",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "scripts": {
+    "pbiviz": "pbiviz",
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "build": "rimraf dist && pbiviz package",
+    "lint": "npx eslint ."
+  },
+  "dependencies": {
+    "@types/d3": "7.4.3",
+    "d3": "^7.9.0",
+    "powerbi-visuals-api": "~5.3.0",
+    "powerbi-visuals-utils-colorutils": "^6.0.1",
+    "powerbi-visuals-utils-dataviewutils": "^6.0.2",
+    "powerbi-visuals-utils-formattingmodel": "6.0.4",
+    "powerbi-visuals-utils-tooltiputils": "^6.0.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "eslint": "^9.11.1",
+    "eslint-plugin-powerbi-visuals": "^1.0.0",
+    "rimraf": "^6.1.3",
+    "typescript": "5.5.4"
+  }
+}

@@ -1,0 +1,2654 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "X-Axis",
+            "name": "xAxis",
+            "kind": "Grouping",
+            "description": "Categorical field for the X-axis"
+        },
+        {
+            "displayName": "Y-Axis",
+            "name": "yAxis",
+            "kind": "Measure",
+            "description": "Measure field for the Y-axis"
+        },
+        {
+            "displayName": "Size",
+            "name": "size",
+            "kind": "Measure",
+            "description": "Measure that controls the bubble size"
+        },
+        {
+            "displayName": "Label",
+            "name": "label",
+            "kind": "Grouping",
+            "description": "Field used for data point labels"
+        },
+        {
+            "displayName": "Color",
+            "name": "color",
+            "kind": "Grouping",
+            "description": "Field used for color assignment"
+        },
+        {
+            "displayName": "Legend",
+            "name": "legend",
+            "kind": "Grouping",
+            "description": "Field used for color grouping / legend"
+        },
+        {
+            "displayName": "Tooltips",
+            "name": "tooltips",
+            "kind": "Measure",
+            "description": "Additional measures to show in tooltips"
+        },
+        {
+            "displayName": "Small Multiples",
+            "name": "smallMultiple",
+            "kind": "Grouping",
+            "description": "Field for trellis / small multiple panels"
+        }
+    ],
+    "objects": {
+        "bubbleSettings": {
+            "properties": {
+                "minSize": {
+                    "type": { "numeric": true }
+                },
+                "maxSize": {
+                    "type": { "numeric": true }
+                },
+                "transparency": {
+                    "type": { "numeric": true }
+                },
+                "shape": {
+                    "type": { "enumeration": [
+                        { "value": "circle", "displayName": "Circle" },
+                        { "value": "square", "displayName": "Square" },
+                        { "value": "diamond", "displayName": "Diamond" },
+                        { "value": "triangle", "displayName": "Triangle" }
+                    ]}
+                },
+                "outlineColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "outlineThickness": {
+                    "type": { "numeric": true }
+                },
+                "showOutlineOnly": {
+                    "type": { "bool": true }
+                },
+                "defaultColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                }
+            }
+        },
+        "dataColors": {
+            "properties": {
+                "fill": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "colorByCategory": {
+                    "type": { "bool": true }
+                },
+                "categoryColors": {
+                    "type": { "text": true }
+                }
+            }
+        },
+        "labelSettings": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "color": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "fontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "fontFamily": {
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "displayUnits": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "decimalPlaces": {
+                    "type": { "numeric": true }
+                },
+                "labelPosition": {
+                    "type": { "enumeration": [
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "below", "displayName": "Below" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                }
+            }
+        },
+        "xAxisSettings": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "labelColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "fontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "fontFamily": {
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "fontBold": {
+                    "type": { "bool": true }
+                },
+                "fontItalic": {
+                    "type": { "bool": true }
+                },
+                "fontUnderline": {
+                    "type": { "bool": true }
+                },
+                "title": {
+                    "type": { "bool": true }
+                },
+                "titleText": {
+                    "type": { "text": true }
+                },
+                "titleStyle": {
+                    "type": { "enumeration": [
+                        { "value": "showTitleOnly", "displayName": "Show title only" }
+                    ]}
+                },
+                "titleColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "titleFontFamily": {
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "titleFontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "titleFontBold": {
+                    "type": { "bool": true }
+                },
+                "titleFontItalic": {
+                    "type": { "bool": true }
+                },
+                "titleFontUnderline": {
+                    "type": { "bool": true }
+                },
+                "gridlines": {
+                    "type": { "bool": true }
+                },
+                "gridlineColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "maximumHeight": {
+                    "type": { "numeric": true }
+                },
+                "concatenateLabels": {
+                    "type": { "bool": true }
+                },
+                "axisType": {
+                    "type": { "enumeration": [
+                        { "value": "categorical", "displayName": "Categorical" },
+                        { "value": "continuous", "displayName": "Continuous" }
+                    ]}
+                },
+                "minValue": {
+                    "type": { "numeric": true },
+                    "rule": {
+                        "inputRole": "xAxis",
+                        "output": {
+                            "property": "minValue",
+                            "selector": ["xAxis"]
+                        }
+                    }
+                },
+                "maxValue": {
+                    "type": { "numeric": true },
+                    "rule": {
+                        "inputRole": "xAxis",
+                        "output": {
+                            "property": "maxValue",
+                            "selector": ["xAxis"]
+                        }
+                    }
+                },
+                "minDate": {
+                    "type": { "text": true }
+                },
+                "maxDate": {
+                    "type": { "text": true }
+                },
+                "logScale": {
+                    "type": { "bool": true }
+                },
+                "invertRange": {
+                    "type": { "bool": true }
+                }
+            }
+        },
+        "yAxisSettings": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "labelColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "fontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "fontFamily": {
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "fontBold": {
+                    "type": { "bool": true }
+                },
+                "fontItalic": {
+                    "type": { "bool": true }
+                },
+                "fontUnderline": {
+                    "type": { "bool": true }
+                },
+                "title": {
+                    "type": { "bool": true }
+                },
+                "titleText": {
+                    "type": { "text": true }
+                },
+                "titleStyle": {
+                    "type": { "enumeration": [
+                        { "value": "showTitleOnly", "displayName": "Show title only" }
+                    ]}
+                },
+                "titleColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "titleFontFamily": {
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "titleFontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "titleFontBold": {
+                    "type": { "bool": true }
+                },
+                "titleFontItalic": {
+                    "type": { "bool": true }
+                },
+                "titleFontUnderline": {
+                    "type": { "bool": true }
+                },
+                "gridlines": {
+                    "type": { "bool": true }
+                },
+                "gridlineColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "decimalPlaces": {
+                    "type": { "numeric": true }
+                },
+                "displayUnits": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "minValue": {
+                    "type": { "numeric": true },
+                    "rule": {
+                        "inputRole": "yAxis",
+                        "output": {
+                            "property": "minValue",
+                            "selector": ["yAxis"]
+                        }
+                    }
+                },
+                "maxValue": {
+                    "type": { "numeric": true },
+                    "rule": {
+                        "inputRole": "yAxis",
+                        "output": {
+                            "property": "maxValue",
+                            "selector": ["yAxis"]
+                        }
+                    }
+                },
+                "maximumWidth": {
+                    "type": { "numeric": true }
+                }
+            }
+        },
+        "legendSettings": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "position": {
+                    "type": { "enumeration": [
+                        { "value": "default", "displayName": "Default" },
+                        { "value": "topLeft", "displayName": "Top left" },
+                        { "value": "topCenter", "displayName": "Top center" },
+                        { "value": "topRight", "displayName": "Top right" },
+                        { "value": "centerLeft", "displayName": "Center left" },
+                        { "value": "centerRight", "displayName": "Center right" },
+                        { "value": "bottomLeft", "displayName": "Bottom left" },
+                        { "value": "bottomCenter", "displayName": "Bottom Center" },
+                        { "value": "bottomRight", "displayName": "Bottom right" },
+                        { "value": "topLeftStacked", "displayName": "Top left stacked" },
+                        { "value": "topRightStacked", "displayName": "Top right stacked" }
+                    ]}
+                },
+                "fontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "fontFamily": {
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "fontBold": {
+                    "type": { "bool": true }
+                },
+                "fontItalic": {
+                    "type": { "bool": true }
+                },
+                "fontUnderline": {
+                    "type": { "bool": true }
+                },
+                "color": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "maximumHeight": {
+                    "type": { "numeric": true }
+                },
+                "concatenateLabels": {
+                    "type": { "bool": true }
+                },
+                "title": {
+                    "type": { "bool": true }
+                },
+                "titleText": {
+                    "type": { "text": true }
+                },
+                "titleStyle": {
+                    "type": { "enumeration": [
+                        { "value": "showTitleOnly", "displayName": "Show title only" }
+                    ]}
+                },
+                "titleAlignment": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "titleColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "titleFontFamily": {
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "titleFontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "titleFontBold": {
+                    "type": { "bool": true }
+                },
+                "titleFontItalic": {
+                    "type": { "bool": true }
+                },
+                "titleFontUnderline": {
+                    "type": { "bool": true }
+                }
+            }
+        },
+        "smallMultipleSettings": {
+            "properties": {
+                "maxColumns": {
+                    "type": { "numeric": true }
+                },
+                "maxRows": {
+                    "type": { "numeric": true }
+                },
+                "showTitle": {
+                    "type": { "bool": true }
+                },
+                "titleText": {
+                    "type": { "text": true }
+                },
+                "titleStyle": {
+                    "type": { "enumeration": [
+                        { "value": "showTitleOnly", "displayName": "Show title only" }
+                    ]}
+                },
+                "titleFontFamily": {
+                    "type": { "formatting": { "fontFamily": true } }
+                },
+                "titleFontSize": {
+                    "type": { "formatting": { "fontSize": true } }
+                },
+                "titleFontBold": {
+                    "type": { "bool": true }
+                },
+                "titleFontItalic": {
+                    "type": { "bool": true }
+                },
+                "titleFontUnderline": {
+                    "type": { "bool": true }
+                },
+                "titleColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "showBorder": {
+                    "type": { "bool": true }
+                },
+                "borderColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "padding": {
+                    "type": { "numeric": true }
+                },
+                "fitToVisual": {
+                    "type": { "bool": true }
+                },
+                "panelWidth": {
+                    "type": { "numeric": true }
+                },
+                "panelHeight": {
+                    "type": { "numeric": true }
+                }
+            }
+        },
+"yAxisReferenceLine": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "lineCount": {
+                    "type": { "numeric": true }
+                },
+                "name_0": {
+                    "type": { "text": true }
+                },
+                "type_0": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_0": {
+                    "type": { "numeric": true }
+                },
+                "color_0": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_0": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_0": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_0": {
+                    "type": { "numeric": true }
+                },
+                "position_0": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_0": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_0": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_0": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_0": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_0": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_0": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_0": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_0": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_0": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_0": {
+                    "type": { "text": true }
+                },
+                "labelColor_0": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_0": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_0": {
+                    "type": { "numeric": true }
+                },
+                "name_1": {
+                    "type": { "text": true }
+                },
+                "type_1": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_1": {
+                    "type": { "numeric": true }
+                },
+                "color_1": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_1": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_1": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_1": {
+                    "type": { "numeric": true }
+                },
+                "position_1": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_1": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_1": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_1": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_1": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_1": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_1": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_1": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_1": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_1": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_1": {
+                    "type": { "text": true }
+                },
+                "labelColor_1": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_1": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_1": {
+                    "type": { "numeric": true }
+                },
+                "name_2": {
+                    "type": { "text": true }
+                },
+                "type_2": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_2": {
+                    "type": { "numeric": true }
+                },
+                "color_2": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_2": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_2": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_2": {
+                    "type": { "numeric": true }
+                },
+                "position_2": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_2": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_2": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_2": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_2": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_2": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_2": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_2": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_2": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_2": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_2": {
+                    "type": { "text": true }
+                },
+                "labelColor_2": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_2": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_2": {
+                    "type": { "numeric": true }
+                },
+                "name_3": {
+                    "type": { "text": true }
+                },
+                "type_3": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_3": {
+                    "type": { "numeric": true }
+                },
+                "color_3": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_3": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_3": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_3": {
+                    "type": { "numeric": true }
+                },
+                "position_3": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_3": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_3": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_3": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_3": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_3": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_3": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_3": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_3": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_3": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_3": {
+                    "type": { "text": true }
+                },
+                "labelColor_3": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_3": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_3": {
+                    "type": { "numeric": true }
+                },
+                "name_4": {
+                    "type": { "text": true }
+                },
+                "type_4": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_4": {
+                    "type": { "numeric": true }
+                },
+                "color_4": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_4": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_4": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_4": {
+                    "type": { "numeric": true }
+                },
+                "position_4": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_4": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_4": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_4": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_4": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_4": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_4": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_4": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_4": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_4": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_4": {
+                    "type": { "text": true }
+                },
+                "labelColor_4": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_4": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_4": {
+                    "type": { "numeric": true }
+                },
+                "name_5": {
+                    "type": { "text": true }
+                },
+                "type_5": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_5": {
+                    "type": { "numeric": true }
+                },
+                "color_5": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_5": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_5": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_5": {
+                    "type": { "numeric": true }
+                },
+                "position_5": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_5": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_5": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_5": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_5": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_5": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_5": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_5": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_5": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_5": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_5": {
+                    "type": { "text": true }
+                },
+                "labelColor_5": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_5": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_5": {
+                    "type": { "numeric": true }
+                },
+                "name_6": {
+                    "type": { "text": true }
+                },
+                "type_6": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_6": {
+                    "type": { "numeric": true }
+                },
+                "color_6": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_6": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_6": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_6": {
+                    "type": { "numeric": true }
+                },
+                "position_6": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_6": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_6": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_6": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_6": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_6": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_6": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_6": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_6": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_6": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_6": {
+                    "type": { "text": true }
+                },
+                "labelColor_6": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_6": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_6": {
+                    "type": { "numeric": true }
+                },
+                "name_7": {
+                    "type": { "text": true }
+                },
+                "type_7": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_7": {
+                    "type": { "numeric": true }
+                },
+                "color_7": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_7": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_7": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_7": {
+                    "type": { "numeric": true }
+                },
+                "position_7": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_7": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_7": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_7": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_7": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_7": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_7": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_7": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_7": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_7": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_7": {
+                    "type": { "text": true }
+                },
+                "labelColor_7": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_7": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_7": {
+                    "type": { "numeric": true }
+                },
+                "name_8": {
+                    "type": { "text": true }
+                },
+                "type_8": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_8": {
+                    "type": { "numeric": true }
+                },
+                "color_8": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_8": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_8": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_8": {
+                    "type": { "numeric": true }
+                },
+                "position_8": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_8": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_8": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_8": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_8": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_8": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_8": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_8": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_8": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_8": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_8": {
+                    "type": { "text": true }
+                },
+                "labelColor_8": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_8": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_8": {
+                    "type": { "numeric": true }
+                },
+                "name_9": {
+                    "type": { "text": true }
+                },
+                "type_9": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_9": {
+                    "type": { "numeric": true }
+                },
+                "color_9": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_9": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_9": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_9": {
+                    "type": { "numeric": true }
+                },
+                "position_9": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_9": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_9": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_9": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_9": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_9": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_9": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_9": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_9": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_9": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_9": {
+                    "type": { "text": true }
+                },
+                "labelColor_9": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_9": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_9": {
+                    "type": { "numeric": true }
+                }
+            }
+        },
+        "xAxisReferenceLine": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "lineCount": {
+                    "type": { "numeric": true }
+                },
+                "name_0": {
+                    "type": { "text": true }
+                },
+                "type_0": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_0": {
+                    "type": { "text": true }
+                },
+                "color_0": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_0": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_0": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_0": {
+                    "type": { "numeric": true }
+                },
+                "position_0": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_0": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_0": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_0": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_0": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_0": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_0": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_0": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_0": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_0": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_0": {
+                    "type": { "text": true }
+                },
+                "labelColor_0": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_0": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_0": {
+                    "type": { "numeric": true }
+                },
+                "name_1": {
+                    "type": { "text": true }
+                },
+                "type_1": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_1": {
+                    "type": { "text": true }
+                },
+                "color_1": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_1": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_1": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_1": {
+                    "type": { "numeric": true }
+                },
+                "position_1": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_1": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_1": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_1": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_1": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_1": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_1": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_1": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_1": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_1": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_1": {
+                    "type": { "text": true }
+                },
+                "labelColor_1": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_1": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_1": {
+                    "type": { "numeric": true }
+                },
+                "name_2": {
+                    "type": { "text": true }
+                },
+                "type_2": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_2": {
+                    "type": { "text": true }
+                },
+                "color_2": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_2": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_2": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_2": {
+                    "type": { "numeric": true }
+                },
+                "position_2": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_2": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_2": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_2": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_2": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_2": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_2": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_2": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_2": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_2": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_2": {
+                    "type": { "text": true }
+                },
+                "labelColor_2": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_2": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_2": {
+                    "type": { "numeric": true }
+                },
+                "name_3": {
+                    "type": { "text": true }
+                },
+                "type_3": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_3": {
+                    "type": { "text": true }
+                },
+                "color_3": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_3": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_3": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_3": {
+                    "type": { "numeric": true }
+                },
+                "position_3": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_3": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_3": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_3": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_3": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_3": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_3": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_3": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_3": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_3": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_3": {
+                    "type": { "text": true }
+                },
+                "labelColor_3": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_3": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_3": {
+                    "type": { "numeric": true }
+                },
+                "name_4": {
+                    "type": { "text": true }
+                },
+                "type_4": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_4": {
+                    "type": { "text": true }
+                },
+                "color_4": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_4": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_4": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_4": {
+                    "type": { "numeric": true }
+                },
+                "position_4": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_4": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_4": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_4": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_4": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_4": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_4": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_4": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_4": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_4": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_4": {
+                    "type": { "text": true }
+                },
+                "labelColor_4": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_4": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_4": {
+                    "type": { "numeric": true }
+                },
+                "name_5": {
+                    "type": { "text": true }
+                },
+                "type_5": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_5": {
+                    "type": { "text": true }
+                },
+                "color_5": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_5": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_5": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_5": {
+                    "type": { "numeric": true }
+                },
+                "position_5": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_5": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_5": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_5": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_5": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_5": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_5": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_5": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_5": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_5": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_5": {
+                    "type": { "text": true }
+                },
+                "labelColor_5": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_5": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_5": {
+                    "type": { "numeric": true }
+                },
+                "name_6": {
+                    "type": { "text": true }
+                },
+                "type_6": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_6": {
+                    "type": { "text": true }
+                },
+                "color_6": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_6": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_6": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_6": {
+                    "type": { "numeric": true }
+                },
+                "position_6": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_6": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_6": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_6": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_6": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_6": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_6": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_6": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_6": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_6": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_6": {
+                    "type": { "text": true }
+                },
+                "labelColor_6": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_6": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_6": {
+                    "type": { "numeric": true }
+                },
+                "name_7": {
+                    "type": { "text": true }
+                },
+                "type_7": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_7": {
+                    "type": { "text": true }
+                },
+                "color_7": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_7": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_7": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_7": {
+                    "type": { "numeric": true }
+                },
+                "position_7": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_7": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_7": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_7": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_7": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_7": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_7": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_7": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_7": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_7": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_7": {
+                    "type": { "text": true }
+                },
+                "labelColor_7": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_7": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_7": {
+                    "type": { "numeric": true }
+                },
+                "name_8": {
+                    "type": { "text": true }
+                },
+                "type_8": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_8": {
+                    "type": { "text": true }
+                },
+                "color_8": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_8": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_8": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_8": {
+                    "type": { "numeric": true }
+                },
+                "position_8": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_8": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_8": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_8": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_8": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_8": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_8": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_8": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_8": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_8": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_8": {
+                    "type": { "text": true }
+                },
+                "labelColor_8": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_8": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_8": {
+                    "type": { "numeric": true }
+                },
+                "name_9": {
+                    "type": { "text": true }
+                },
+                "type_9": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "value_9": {
+                    "type": { "text": true }
+                },
+                "color_9": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency_9": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle_9": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "strokeWidth_9": {
+                    "type": { "numeric": true }
+                },
+                "position_9": {
+                    "type": { "enumeration": [
+                        { "value": "front", "displayName": "In front" },
+                        { "value": "behind", "displayName": "Behind" }
+                    ]}
+                },
+                "showShade_9": {
+                    "type": { "bool": true }
+                },
+                "shadePosition_9": {
+                    "type": { "enumeration": [
+                        { "value": "before", "displayName": "Before" },
+                        { "value": "after", "displayName": "After" }
+                    ]}
+                },
+                "shadeMatchLineColor_9": {
+                    "type": { "bool": true }
+                },
+                "shadeColor_9": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "shadeTransparency_9": {
+                    "type": { "numeric": true }
+                },
+                "showLabel_9": {
+                    "type": { "bool": true }
+                },
+                "labelHPosition_9": {
+                    "type": { "enumeration": [
+                        { "value": "left", "displayName": "Left" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "right", "displayName": "Right" }
+                    ]}
+                },
+                "labelVPosition_9": {
+                    "type": { "enumeration": [
+                        { "value": "above", "displayName": "Above" },
+                        { "value": "center", "displayName": "Center" },
+                        { "value": "below", "displayName": "Below" }
+                    ]}
+                },
+                "labelStyle_9": {
+                    "type": { "enumeration": [
+                        { "value": "dataValue", "displayName": "Data value" },
+                        { "value": "name", "displayName": "Name" },
+                        { "value": "both", "displayName": "Name + value" },
+                        { "value": "custom", "displayName": "Custom" }
+                    ]}
+                },
+                "labelText_9": {
+                    "type": { "text": true }
+                },
+                "labelColor_9": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "labelDisplayUnits_9": {
+                    "type": { "enumeration": [
+                        { "value": "auto", "displayName": "Auto" },
+                        { "value": "none", "displayName": "None" },
+                        { "value": "thousands", "displayName": "Thousands" },
+                        { "value": "millions", "displayName": "Millions" },
+                        { "value": "billions", "displayName": "Billions" }
+                    ]}
+                },
+                "labelDecimalPlaces_9": {
+                    "type": { "numeric": true }
+                }
+            }
+        },
+        "referenceBand": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "axis": {
+                    "type": { "enumeration": [
+                        { "value": "y", "displayName": "Y-Axis" },
+                        { "value": "x", "displayName": "X-Axis" }
+                    ]}
+                },
+                "startType": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "startValue": {
+                    "type": { "numeric": true }
+                },
+                "endType": {
+                    "type": { "enumeration": [
+                        { "value": "constant", "displayName": "Constant" },
+                        { "value": "average", "displayName": "Average" },
+                        { "value": "median", "displayName": "Median" },
+                        { "value": "min", "displayName": "Minimum" },
+                        { "value": "max", "displayName": "Maximum" }
+                    ]}
+                },
+                "endValue": {
+                    "type": { "numeric": true }
+                },
+                "color": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "transparency": {
+                    "type": { "numeric": true }
+                }
+            }
+        },
+        "sorting": {
+            "properties": {
+                "sortConfig": {
+                    "type": { "text": true }
+                }
+            }
+        },
+        "gridlines": {
+            "properties": {
+                "showVertical": {
+                    "type": { "bool": true }
+                },
+                "verticalColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "verticalStrokeWidth": {
+                    "type": { "numeric": true }
+                },
+                "verticalLineStyle": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "verticalTransparency": {
+                    "type": { "numeric": true }
+                },
+                "showHorizontal": {
+                    "type": { "bool": true }
+                },
+                "horizontalColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "horizontalStrokeWidth": {
+                    "type": { "numeric": true }
+                },
+                "horizontalLineStyle": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "horizontalTransparency": {
+                    "type": { "numeric": true }
+                }
+            }
+        },
+        "crosshair": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "color": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "strokeWidth": {
+                    "type": { "numeric": true }
+                },
+                "lineStyle": {
+                    "type": { "enumeration": [
+                        { "value": "solid", "displayName": "Solid" },
+                        { "value": "dashed", "displayName": "Dashed" },
+                        { "value": "dotted", "displayName": "Dotted" }
+                    ]}
+                },
+                "mode": {
+                    "type": { "enumeration": [
+                        { "value": "both", "displayName": "Vertical + Horizontal" },
+                        { "value": "vertical", "displayName": "Vertical only" },
+                        { "value": "horizontal", "displayName": "Horizontal only" }
+                    ]}
+                }
+            }
+        },
+        "errorBars": {
+            "properties": {
+                "show": {
+                    "type": { "bool": true }
+                },
+                "type": {
+                    "type": { "enumeration": [
+                        { "value": "standardDeviation", "displayName": "Standard Deviation" },
+                        { "value": "standardError", "displayName": "Standard Error" },
+                        { "value": "percentage", "displayName": "Percentage" },
+                        { "value": "fixed", "displayName": "Fixed Value" }
+                    ]}
+                },
+                "value": {
+                    "type": { "numeric": true }
+                },
+                "color": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "strokeWidth": {
+                    "type": { "numeric": true }
+                },
+                "showBand": {
+                    "type": { "bool": true }
+                },
+                "bandColor": {
+                    "type": { "fill": { "solid": { "color": true } } }
+                },
+                "bandTransparency": {
+                    "type": { "numeric": true }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "xAxis": { "max": 1 },
+                    "yAxis": { "max": 1 },
+                    "size": { "max": 1 },
+                    "label": { "max": 1 },
+                    "color": { "max": 1 },
+                    "legend": { "max": 1 },
+                    "smallMultiple": { "max": 1 },
+                    "tooltips": { "max": 5 }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        { "for": { "in": "xAxis" } },
+                        { "for": { "in": "legend" } },
+                        { "for": { "in": "label" } },
+                        { "for": { "in": "color" } },
+                        { "for": { "in": "smallMultiple" } }
+                    ],
+                    "dataReductionAlgorithm": {
+                        "top": { "count": 30000 }
+                    }
+                },
+                "values": {
+                    "select": [
+                        { "bind": { "to": "yAxis" } },
+                        { "bind": { "to": "size" } },
+                        { "bind": { "to": "tooltips" } }
+                    ]
+                }
+            }
+        }
+    ],
+    "drilldown": {
+        "roles": ["xAxis"]
+    },
+    "tooltips": {
+        "supportedTypes": {
+            "default": true,
+            "canvas": true
+        },
+        "roles": ["tooltips"]
+    },
+    "privileges": []
+}
